@@ -68,7 +68,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_STAGING_ROLE_ARN }}
+          role-to-assume: ${{ secrets.AWS_STAGING_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Sync to staging S3
@@ -87,6 +87,9 @@ jobs:
             --paths "/*"
 
   # ── Production ─────────────────────────────────────────────────────────────
+  # Production deployment is gated by a required reviewer on the `production`
+  # GitHub environment. Configure the required reviewer before merging to main.
+  # See docs/release-process.md for setup instructions.
   deploy-production:
     name: Deploy to Production
     needs: deploy-staging
@@ -103,7 +106,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_PRODUCTION_ROLE_ARN }}
+          role-to-assume: ${{ secrets.AWS_PRODUCTION_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Sync to production S3

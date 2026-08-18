@@ -56,12 +56,16 @@ These are populated during the AWS bootstrap session.
 
 | Name                             | Environment  | Description                         |
 |----------------------------------|--------------|-------------------------------------|
-| `AWS_STAGING_ROLE_ARN`           | staging      | IAM role ARN for staging deployment |
-| `AWS_PRODUCTION_ROLE_ARN`        | production   | IAM role ARN for production deployment |
-| `STAGING_S3_BUCKET`              | staging      | Staging S3 bucket name              |
-| `PRODUCTION_S3_BUCKET`           | production   | Production S3 bucket name           |
-| `STAGING_CLOUDFRONT_DISTRIBUTION_ID`    | staging | CloudFront distribution ID   |
-| `PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID` | production | CloudFront distribution ID |
+| `AWS_STAGING_ROLE_ARN`           | staging      | IAM role ARN for staging deployment (**secret**) |
+| `AWS_PRODUCTION_ROLE_ARN`        | production   | IAM role ARN for production deployment (**secret**) |
+| `STAGING_S3_BUCKET`              | staging      | Staging S3 bucket name (variable)   |
+| `PRODUCTION_S3_BUCKET`           | production   | Production S3 bucket name (variable) |
+| `STAGING_CLOUDFRONT_DISTRIBUTION_ID`    | staging | CloudFront distribution ID (variable) |
+| `PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID` | production | CloudFront distribution ID (variable) |
+| `AWS_REGION`                     | both         | Target AWS region (variable, e.g. `us-east-1`) |
+
+> **Important:** `AWS_STAGING_ROLE_ARN` and `AWS_PRODUCTION_ROLE_ARN` must be stored as GitHub Actions **secrets** (not variables) because they contain the AWS account ID.
+> The `production` environment must have a **required reviewer** configured before any merge to `main` triggers the pipeline. Set this in GitHub → Settings → Environments → production → Required reviewers.
 
 ## Hotfix Process
 
