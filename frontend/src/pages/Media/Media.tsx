@@ -31,7 +31,7 @@ export default function Media() {
                 <img
                   className={styles.image}
                   src="/media-placeholder.svg"
-                  alt={card.title}
+                  alt=""
                   loading="lazy"
                   width="640"
                   height="400"

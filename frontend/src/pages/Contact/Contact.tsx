@@ -30,7 +30,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" aria-label="Location and social links">
         <div className="container">
           <div className={styles.supportGrid}>
             <article className="surface-panel" aria-labelledby="maps-heading">
