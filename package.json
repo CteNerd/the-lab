@@ -1,0 +1,10 @@
+{
+  "name": "the-lab",
+  "private": true,
+  "description": "The Lab Performance & Strength — monorepo root",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": "npm --prefix frontend test --if-present"
+  }
+}
