@@ -1,0 +1,35 @@
+.page {
+  display: flex;
+  align-items: center;
+}
+.inner {
+  text-align: center;
+}
+.code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--lab-border);
+  line-height: 1;
+  margin-bottom: var(--lab-space-4);
+}
+h1 { margin-bottom: var(--lab-space-4); }
+.message {
+  font-size: var(--lab-font-size-lg);
+  color: var(--lab-text-muted);
+  margin-bottom: var(--lab-space-8);
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--lab-space-3) var(--lab-space-6);
+  background-color: var(--lab-accent);
+  color: var(--lab-bg);
+  font-weight: 700;
+  border-radius: var(--lab-radius-sm);
+  text-decoration: none;
+  transition: background-color var(--lab-transition-fast);
+}
+.cta:hover {
+  background-color: var(--lab-accent-hover);
+  color: var(--lab-bg);
+}

@@ -1,0 +1,12 @@
+.page {}
+.hero { background-color: var(--lab-surface-alt); }
+.subtitle {
+  font-size: var(--lab-font-size-xl);
+  color: var(--lab-text-muted);
+  max-width: 700px;
+  margin-top: var(--lab-space-6);
+}
+.placeholder {
+  color: var(--lab-text-muted);
+  font-size: var(--lab-font-size-sm);
+}

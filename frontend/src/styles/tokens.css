@@ -1,0 +1,59 @@
+/* The Lab — global design tokens */
+:root {
+  /* Colour palette */
+  --lab-bg: #000000;
+  --lab-surface: #101010;
+  --lab-surface-alt: #171717;
+  --lab-text: #ffffff;
+  --lab-text-muted: #bdbdbd;
+  --lab-border: #2a2a2a;
+  --lab-accent: #66ff4d;
+  --lab-accent-hover: #55ee3c;
+
+  /* Typography */
+  --lab-font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --lab-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --lab-font-size-xs: 0.75rem;    /* 12px */
+  --lab-font-size-sm: 0.875rem;   /* 14px */
+  --lab-font-size-base: 1rem;     /* 16px */
+  --lab-font-size-lg: 1.125rem;   /* 18px */
+  --lab-font-size-xl: 1.25rem;    /* 20px */
+  --lab-font-size-2xl: 1.5rem;    /* 24px */
+  --lab-font-size-3xl: 1.875rem;  /* 30px */
+  --lab-font-size-4xl: 2.25rem;   /* 36px */
+  --lab-font-size-5xl: 3rem;      /* 48px */
+
+  --lab-line-height-tight: 1.2;
+  --lab-line-height-snug: 1.375;
+  --lab-line-height-base: 1.5;
+  --lab-line-height-relaxed: 1.625;
+
+  /* Spacing */
+  --lab-space-1: 0.25rem;
+  --lab-space-2: 0.5rem;
+  --lab-space-3: 0.75rem;
+  --lab-space-4: 1rem;
+  --lab-space-6: 1.5rem;
+  --lab-space-8: 2rem;
+  --lab-space-12: 3rem;
+  --lab-space-16: 4rem;
+  --lab-space-20: 5rem;
+  --lab-space-24: 6rem;
+
+  /* Layout */
+  --lab-max-width: 1200px;
+  --lab-header-height: 64px;
+
+  /* Border radius */
+  --lab-radius-sm: 4px;
+  --lab-radius-md: 8px;
+  --lab-radius-lg: 12px;
+
+  /* Transitions */
+  --lab-transition-fast: 150ms ease;
+  --lab-transition-base: 250ms ease;
+
+  /* Focus */
+  --lab-focus-ring: 0 0 0 3px rgba(102, 255, 77, 0.5);
+}
