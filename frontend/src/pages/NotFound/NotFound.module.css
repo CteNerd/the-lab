@@ -12,7 +12,7 @@
   line-height: 1;
   margin-bottom: var(--lab-space-4);
 }
-h1 { margin-bottom: var(--lab-space-4); }
+.heading { margin-bottom: var(--lab-space-4); }
 .message {
   font-size: var(--lab-font-size-lg);
   color: var(--lab-text-muted);

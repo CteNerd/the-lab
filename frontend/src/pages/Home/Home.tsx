@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 
 export default function Home() {
@@ -14,8 +15,8 @@ export default function Home() {
             [Hero tagline — content needed from Patrick]
           </p>
           <div className={styles.actions}>
-            <a href="/book" className={styles.primaryCta}>Book Training</a>
-            <a href="/training" className={styles.secondaryCta}>Explore Programs</a>
+            <Link to="/book" className={styles.primaryCta}>Book Training</Link>
+            <Link to="/training" className={styles.secondaryCta}>Explore Programs</Link>
           </div>
         </div>
       </section>

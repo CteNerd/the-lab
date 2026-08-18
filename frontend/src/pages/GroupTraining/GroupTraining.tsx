@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './GroupTraining.module.css';
 
 export default function GroupTraining() {
@@ -17,7 +18,7 @@ export default function GroupTraining() {
         <div className="container">
           <h2 id="group-details-heading">Program Details</h2>
           <p>[Format, session length, group size, availability, pricing — content needed from Patrick]</p>
-          <a href="/book" className={styles.cta}>Book a Session</a>
+          <Link to="/book" className={styles.cta}>Book a Session</Link>
         </div>
       </section>
     </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './PersonalTraining.module.css';
 
 export default function PersonalTraining() {
@@ -17,7 +18,7 @@ export default function PersonalTraining() {
         <div className="container">
           <h2 id="details-heading">Program Details</h2>
           <p>[Format, session length, availability, pricing — content needed from Patrick]</p>
-          <a href="/book" className={styles.cta}>Book a Session</a>
+          <Link to="/book" className={styles.cta}>Book a Session</Link>
         </div>
       </section>
     </div>
