@@ -26,6 +26,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--lab-text);
@@ -136,4 +140,100 @@ ul, ol {
   .section {
     padding-block: var(--lab-space-12);
   }
+}
+
+.section-header {
+  display: grid;
+  gap: var(--lab-space-3);
+  margin-bottom: var(--lab-space-8);
+}
+
+.section-kicker {
+  color: var(--lab-accent);
+  font-size: var(--lab-font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-lead {
+  max-width: 720px;
+  font-size: var(--lab-font-size-lg);
+}
+
+.surface-panel {
+  border: 1px solid var(--lab-border);
+  border-radius: var(--lab-radius-md);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  padding: var(--lab-space-8);
+}
+
+.surface-panel h3 {
+  margin-bottom: var(--lab-space-3);
+}
+
+.surface-panel p,
+.surface-panel li,
+.surface-panel dt,
+.surface-panel dd {
+  color: var(--lab-text-muted);
+}
+
+.placeholder-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--lab-space-2);
+  padding: var(--lab-space-2) var(--lab-space-3);
+  border: 1px solid rgba(102, 255, 77, 0.35);
+  border-radius: 999px;
+  color: var(--lab-accent);
+  font-size: var(--lab-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: var(--lab-space-3) var(--lab-space-6);
+  border-radius: var(--lab-radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.button-primary {
+  background-color: var(--lab-accent);
+  color: var(--lab-bg);
+}
+
+.button-primary:hover {
+  background-color: var(--lab-accent-hover);
+  color: var(--lab-bg);
+}
+
+.button-secondary {
+  border: 1px solid var(--lab-border);
+  color: var(--lab-text);
+}
+
+.button-secondary:hover {
+  border-color: var(--lab-accent);
+  color: var(--lab-accent);
+}
+
+.inline-list {
+  display: grid;
+  gap: var(--lab-space-3);
+}
+
+.meta-label {
+  color: var(--lab-accent);
+  font-size: var(--lab-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }

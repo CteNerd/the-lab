@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { placeholderLabel } from '../../content/siteContent';
 import styles from './Book.module.css';
 
 export default function Book() {
@@ -6,23 +7,28 @@ export default function Book() {
     <div className={styles.page}>
       <section className={`section ${styles.hero}`} aria-labelledby="book-heading">
         <div className="container">
-          <h1 id="book-heading">Book <span className="accent">Training</span></h1>
-          <p className={styles.subtitle}>
-            Start your journey with The Lab.
-          </p>
+          <div className="section-header">
+            <p className="section-kicker">Book Training</p>
+            <h1 id="book-heading">Book <span className="accent">Training</span></h1>
+            <p className={`section-lead ${styles.subtitle}`}>
+              The booking page intentionally stays in placeholder mode so visitors have a clear inquiry path without the site implying a live reservation system.
+            </p>
+          </div>
+          <span className="placeholder-badge">{placeholderLabel}</span>
         </div>
       </section>
 
       <section className="section" aria-labelledby="booking-section-heading">
         <div className="container">
-          <h2 id="booking-section-heading" className="sr-only">Booking</h2>
-          <div className={styles.notice} role="note">
-            <h3>Online Booking Coming Soon</h3>
+          <div className={styles.notice}>
+            <h2 id="booking-section-heading">Online Booking Coming Soon</h2>
             <p>
-              Our online booking system is currently being set up. To reserve your training session,
-              please reach out directly by phone or email.
+              Final booking workflow, calendar rules, confirmations, and payment handling are intentionally deferred. Until then, this page points visitors to direct outreach.
             </p>
-            <Link to="/contact" className={styles.cta}>Contact Us</Link>
+            <div className={styles.actions}>
+              <Link to="/contact" className="button-primary">Contact Us</Link>
+              <Link to="/training" className="button-secondary">Review Programs</Link>
+            </div>
           </div>
         </div>
       </section>

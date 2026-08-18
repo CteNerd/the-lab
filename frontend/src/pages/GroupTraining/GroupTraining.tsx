@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { placeholderLabel, programDetails } from '../../content/siteContent';
 import styles from './GroupTraining.module.css';
 
 export default function GroupTraining() {
@@ -6,19 +7,36 @@ export default function GroupTraining() {
     <div className={styles.page}>
       <section className={`section ${styles.hero}`} aria-labelledby="group-heading">
         <div className="container">
-          <h1 id="group-heading"><span className="accent">Group</span> Training</h1>
-          <p className={styles.subtitle}>
-            {/* TODO: Group training details from Patrick */}
-            [Group training program details — content needed from Patrick]
-          </p>
+          <div className="section-header">
+            <p className="section-kicker">Program Detail</p>
+            <h1 id="group-heading"><span className="accent">Group</span> Training</h1>
+            <p className={`section-lead ${styles.subtitle}`}>{programDetails.group.intro}</p>
+          </div>
+          <span className="placeholder-badge">{placeholderLabel}</span>
         </div>
       </section>
 
       <section className="section" aria-labelledby="group-details-heading">
         <div className="container">
-          <h2 id="group-details-heading">Program Details</h2>
-          <p>[Format, session length, group size, availability, pricing — content needed from Patrick]</p>
-          <Link to="/book" className={styles.cta}>Book a Session</Link>
+          <div className="section-header">
+            <p className="section-kicker">Program Details</p>
+            <h2 id="group-details-heading">What still needs Patrick review</h2>
+          </div>
+          <div className={styles.grid}>
+            <div className="surface-panel">
+              <h3>Key Details</h3>
+              <ul className="inline-list" role="list">
+                {programDetails.group.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="surface-panel">
+              <h3>Next Step</h3>
+              <p>The booking pathway is available now as a clearly marked placeholder until the final intake flow is approved.</p>
+              <Link to="/book" className="button-primary">Book a Session</Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

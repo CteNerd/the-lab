@@ -4,6 +4,22 @@
   min-height: 100vh;
 }
 
+.skipLink {
+  position: absolute;
+  left: var(--lab-space-4);
+  top: -48px;
+  z-index: 20;
+  padding: var(--lab-space-3) var(--lab-space-4);
+  border-radius: var(--lab-radius-sm);
+  background-color: var(--lab-accent);
+  color: var(--lab-bg);
+  font-weight: 700;
+}
+
+.skipLink:focus {
+  top: var(--lab-space-4);
+}
+
 .main {
   flex: 1;
 }

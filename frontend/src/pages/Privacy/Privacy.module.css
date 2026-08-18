@@ -1,7 +1,10 @@
 .page {}
-.hero { background-color: var(--lab-surface-alt); }
-.content { max-width: 760px; }
-.placeholder {
-  color: var(--lab-text-muted);
-  font-size: var(--lab-font-size-sm);
+
+.hero {
+  background-color: var(--lab-surface-alt);
+}
+
+.subtitle,
+.content {
+  max-width: 760px;
 }

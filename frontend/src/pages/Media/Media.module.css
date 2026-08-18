@@ -1,12 +1,40 @@
 .page {}
-.hero { background-color: var(--lab-surface-alt); }
-.subtitle {
-  font-size: var(--lab-font-size-xl);
-  color: var(--lab-text-muted);
-  max-width: 700px;
-  margin-top: var(--lab-space-6);
+
+.hero {
+  background-color: var(--lab-surface-alt);
 }
-.placeholder {
+
+.subtitle {
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  gap: var(--lab-space-6);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.image {
+  width: 100%;
+  border-radius: var(--lab-radius-md);
+  border: 1px solid var(--lab-border);
+  background-color: var(--lab-surface-alt);
+}
+
+.caption {
+  display: grid;
+  gap: var(--lab-space-2);
+  margin-top: var(--lab-space-4);
   color: var(--lab-text-muted);
-  font-size: var(--lab-font-size-sm);
+}
+
+.videoPanel {
+  display: grid;
+  gap: var(--lab-space-6);
+  margin-bottom: var(--lab-space-6);
+}
+
+.posterCard {
+  display: grid;
+  gap: var(--lab-space-6);
 }

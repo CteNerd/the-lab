@@ -8,9 +8,12 @@ export default function NotFound() {
         <p className={styles.code} aria-hidden="true">404</p>
         <h1 id="notfound-heading" className={styles.heading}>Page <span className="accent">Not Found</span></h1>
         <p className={styles.message}>
-          The page you're looking for doesn't exist or has moved.
+          The page you’re looking for doesn’t exist or has moved.
         </p>
-        <Link to="/" className={styles.cta}>Back to Home</Link>
+        <div className={styles.actions}>
+          <Link to="/" className="button-primary">Back to Home</Link>
+          <Link to="/contact" className="button-secondary">Contact The Lab</Link>
+        </div>
       </div>
     </div>
   );

@@ -1,12 +1,27 @@
 .page {}
-.hero { background-color: var(--lab-surface-alt); }
-.subtitle {
-  font-size: var(--lab-font-size-xl);
-  color: var(--lab-text-muted);
-  max-width: 700px;
-  margin-top: var(--lab-space-6);
+
+.hero {
+  background-color: var(--lab-surface-alt);
 }
-.placeholder {
-  color: var(--lab-text-muted);
-  font-size: var(--lab-font-size-sm);
+
+.subtitle {
+  max-width: 760px;
+}
+
+.grid {
+  display: grid;
+  gap: var(--lab-space-6);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.meta {
+  display: grid;
+  gap: var(--lab-space-4);
+  margin-bottom: var(--lab-space-6);
+}
+
+.quote {
+  color: var(--lab-text);
+  font-size: var(--lab-font-size-lg);
+  line-height: var(--lab-line-height-relaxed);
 }

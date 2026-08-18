@@ -1,29 +1,34 @@
 .page {}
-.hero { background-color: var(--lab-surface-alt); }
+
+.hero {
+  background-color: var(--lab-surface-alt);
+}
+
 .subtitle {
-  font-size: var(--lab-font-size-xl);
-  color: var(--lab-text-muted);
-  max-width: 700px;
-  margin-top: var(--lab-space-6);
+  max-width: 760px;
 }
-.info {
+
+.info,
+.supportGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--lab-space-8);
-  margin-bottom: var(--lab-space-12);
+  gap: var(--lab-space-6);
 }
-.infoItem h3 {
-  font-size: var(--lab-font-size-xs);
-  color: var(--lab-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: var(--lab-space-2);
-}
+
 .formNote {
   border: 1px solid var(--lab-border);
   border-radius: var(--lab-radius-md);
-  padding: var(--lab-space-6);
+  padding: var(--lab-space-8);
   background-color: var(--lab-surface);
-  color: var(--lab-text-muted);
-  font-size: var(--lab-font-size-sm);
+}
+
+@media (min-width: 900px) {
+  .supportGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 700px) {
+  .info {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Video poster placeholder</title>
+  <desc id="desc">Placeholder poster for future approved training clips.</desc>
+  <rect width="640" height="400" fill="#101010" />
+  <rect x="24" y="24" width="592" height="352" rx="16" fill="#171717" stroke="#2a2a2a" stroke-width="2" />
+  <circle cx="320" cy="200" r="58" fill="#66ff4d" opacity="0.2" />
+  <path d="M300 164v72l58-36z" fill="#66ff4d" />
+  <text x="320" y="332" text-anchor="middle" fill="#ffffff" font-size="28" font-family="Inter, Arial, sans-serif">
+    Short training clip poster pending Patrick approval
+  </text>
+</svg>
