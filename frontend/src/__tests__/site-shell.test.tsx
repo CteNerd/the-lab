@@ -15,17 +15,17 @@ describe('site shell', () => {
   it('renders primary navigation links', () => {
     const markup = renderWithRouter(<Header />);
 
-    expect(markup).toContain('href="#/about"');
-    expect(markup).toContain('href="#/training"');
-    expect(markup).toContain('href="#/contact"');
+    expect(markup).toContain('href="/about"');
+    expect(markup).toContain('href="/training"');
+    expect(markup).toContain('href="/contact"');
     expect(markup).toContain('Book Training');
   });
 
   it('renders footer legal links', () => {
     const markup = renderWithRouter(<Footer />);
 
-    expect(markup).toContain('href="#/privacy"');
-    expect(markup).toContain('href="#/terms"');
+    expect(markup).toContain('href="/privacy"');
+    expect(markup).toContain('href="/terms"');
     expect(markup).toContain('Placeholder tagline pending Patrick review.');
   });
 });
