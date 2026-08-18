@@ -25,3 +25,17 @@
   font-size: var(--lab-font-size-lg);
   line-height: var(--lab-line-height-relaxed);
 }
+
+.communityFigure {
+  margin: 0;
+}
+
+.communityImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--lab-radius-md);
+  border: 1px solid var(--lab-border);
+  object-fit: cover;
+  max-height: 480px;
+}

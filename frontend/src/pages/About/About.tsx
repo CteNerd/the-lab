@@ -35,6 +35,24 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <section className="section" aria-labelledby="about-image-heading">
+        <div className="container">
+          <figure className={styles.supportFigure}>
+            <img
+              src="/images/athlete-coaching-support.jpg"
+              alt="Coach helping an athlete up during an outdoor training session"
+              className={styles.supportImage}
+              loading="lazy"
+              width="800"
+              height="1200"
+            />
+            <figcaption id="about-image-heading" className={styles.supportCaption}>
+              Coaching at The Lab Performance &amp; Strength.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
     </div>
   );
 }

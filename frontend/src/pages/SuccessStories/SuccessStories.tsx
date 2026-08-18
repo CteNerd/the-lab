@@ -52,6 +52,21 @@ export default function SuccessStories() {
           </div>
         </div>
       </section>
+
+      <section className="section" aria-label="Athletes at The Lab">
+        <div className="container">
+          <figure className={styles.communityFigure}>
+            <img
+              src="/images/the-lab-athlete-group.jpg"
+              alt="Athletes learn to work and grow together, community."
+              className={styles.communityImage}
+              loading="lazy"
+              width="800"
+              height="533"
+            />
+          </figure>
+        </div>
+      </section>
     </div>
   );
 }

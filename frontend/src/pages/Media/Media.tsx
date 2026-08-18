@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { mediaImageCards, mediaVideoGuidelines, placeholderLabel } from '../../content/siteContent';
+import { mediaImageCards, mediaVideoGuidelines } from '../../content/siteContent';
 import styles from './Media.module.css';
 
 export default function Media() {
@@ -11,10 +11,9 @@ export default function Media() {
             <p className="section-kicker">Media</p>
             <h1 id="media-heading">Media <span className="accent">Gallery</span></h1>
             <p className={`section-lead ${styles.subtitle}`}>
-              The gallery is scaffolded for optimized images and future short video clips while approved media assets are still being gathered.
+              Training photos and video content from The Lab Performance &amp; Strength sessions.
             </p>
           </div>
-          <span className="placeholder-badge">{placeholderLabel}</span>
         </div>
       </section>
 
@@ -22,7 +21,7 @@ export default function Media() {
         <div className="container">
           <div className="section-header">
             <p className="section-kicker">Image Layout</p>
-            <h2 id="gallery-heading">Lazy-loaded image placeholders</h2>
+            <h2 id="gallery-heading">Training Gallery</h2>
           </div>
 
           <div className={styles.grid}>
@@ -30,8 +29,8 @@ export default function Media() {
               <figure key={card.title} className="surface-panel">
                 <img
                   className={styles.image}
-                  src="/media-placeholder.svg"
-                  alt=""
+                  src={card.src}
+                  alt={card.alt}
                   loading="lazy"
                   width="640"
                   height="400"
@@ -56,8 +55,8 @@ export default function Media() {
             <div className={`surface-panel ${styles.posterCard}`}>
               <img
                 className={styles.image}
-                src="/video-poster-placeholder.svg"
-                alt=""
+                src="/images/football-training-action.jpg"
+                alt="Athletes preparing for a football training drill inside an indoor facility"
                 loading="lazy"
                 width="640"
                 height="400"

@@ -30,6 +30,21 @@ export default function Contact() {
         </div>
       </section>
 
+      <section className="section" aria-label="Facility photo">
+        <div className="container">
+          <figure className={styles.facilityFigure}>
+            <img
+              src="/images/Patrick-Robertson-coaching.jpg"
+              alt="Athletes working through a group football training drill on the field"
+              className={styles.facilityImage}
+              loading="lazy"
+              width="800"
+              height="1067"
+            />
+          </figure>
+        </div>
+      </section>
+
       <section className="section" aria-label="Location and social links">
         <div className="container">
           <div className={styles.supportGrid}>

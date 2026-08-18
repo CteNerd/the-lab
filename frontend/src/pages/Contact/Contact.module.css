@@ -21,6 +21,21 @@
   background-color: var(--lab-surface);
 }
 
+.facilityFigure {
+  margin: 0;
+  max-width: 800px;
+}
+
+.facilityImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--lab-radius-md);
+  border: 1px solid var(--lab-border);
+  object-fit: cover;
+  max-height: 560px;
+}
+
 @media (min-width: 900px) {
   .supportGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
