@@ -17,7 +17,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="contact-info-heading">
+      <section className="section" aria-label="Contact information">
         <div className="container">
           <div className={styles.info}>
             {contactDetails.map((detail) => (
