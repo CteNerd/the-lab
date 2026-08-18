@@ -31,7 +31,9 @@ export default function Header() {
       return;
     }
 
-    const focusableElements = navRef.current?.querySelectorAll<HTMLElement>('a[href]');
+    const focusableElements = navRef.current?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    );
 
     const firstFocusable = focusableElements?.[0];
     const lastFocusable = focusableElements?.[focusableElements.length - 1];
