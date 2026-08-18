@@ -7,7 +7,7 @@ export default function SuccessStories() {
         <div className="container">
           <h1 id="stories-heading">Success <span className="accent">Stories</span></h1>
           <p className={styles.subtitle}>
-            Real athletes. Real results.
+            [Success stories introduction needed from Patrick]
           </p>
         </div>
       </section>

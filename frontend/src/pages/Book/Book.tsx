@@ -16,7 +16,7 @@ export default function Book() {
       <section className="section" aria-labelledby="booking-section-heading">
         <div className="container">
           <h2 id="booking-section-heading" className="sr-only">Booking</h2>
-          <div className={styles.notice} role="status">
+          <div className={styles.notice} role="note">
             <h3>Online Booking Coming Soon</h3>
             <p>
               Our online booking system is currently being set up. To reserve your training session,
