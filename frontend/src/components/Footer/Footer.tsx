@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { contactDetails, sharedSiteCopy } from '../../content/siteContent';
 import styles from './Footer.module.css';
 
 const currentYear = new Date().getFullYear();
@@ -26,9 +27,8 @@ export default function Footer() {
             <span className={styles.logoText}>THE LAB</span>
             <span className={styles.logoSub}>Performance &amp; Strength</span>
           </Link>
-          <p className={styles.tagline}>
-            [Tagline needed from Patrick]
-          </p>
+          <p className={styles.tagline}>{sharedSiteCopy.footerTagline}</p>
+          <span className="placeholder-badge">Pending Patrick review</span>
         </div>
 
         <nav aria-label="Footer navigation" className={styles.navSection}>
@@ -45,19 +45,12 @@ export default function Footer() {
         <div className={styles.contactSection}>
           <h2 className={styles.navHeading}>Contact</h2>
           <ul className={styles.contactList} role="list">
-            {/* TODO: Replace with actual contact details from Patrick */}
-            <li>
-              <span className={styles.contactLabel}>Phone</span>
-              <span className={styles.contactValue}>[Phone TBD]</span>
-            </li>
-            <li>
-              <span className={styles.contactLabel}>Email</span>
-              <span className={styles.contactValue}>[Email TBD]</span>
-            </li>
-            <li>
-              <span className={styles.contactLabel}>Location</span>
-              <span className={styles.contactValue}>[Location TBD]</span>
-            </li>
+            {contactDetails.map(({ label, value }) => (
+              <li key={label}>
+                <span className={styles.contactLabel}>{label}</span>
+                <span className={styles.contactValue}>{value}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
