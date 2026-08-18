@@ -26,9 +26,13 @@ export default function Training() {
           </div>
 
           <div className={styles.cards}>
-            {homeProgramPreview.map((program) => (
-              <article key={program.title} className="surface-panel">
-                <h3>{program.title}</h3>
+            {homeProgramPreview.map((program, index) => (
+              <article
+                key={program.href}
+                className="surface-panel"
+                aria-labelledby={`program-card-heading-${index}`}
+              >
+                <h3 id={`program-card-heading-${index}`}>{program.title}</h3>
                 <p>{program.description}</p>
                 <Link to={program.href} className={styles.cardLink}>Learn More</Link>
               </article>

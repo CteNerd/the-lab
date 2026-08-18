@@ -30,7 +30,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="maps-heading">
+      <section className="section">
         <div className="container">
           <div className={styles.supportGrid}>
             <article className="surface-panel" aria-labelledby="maps-heading">
