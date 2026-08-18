@@ -62,7 +62,7 @@ export default function Contact() {
 
       <section className="section" aria-labelledby="inquiry-heading">
         <div className="container">
-          <div className={styles.formNote} role="note" aria-labelledby="inquiry-heading">
+          <div className={styles.formNote}>
             <h2 id="inquiry-heading">Inquiry Form Placeholder</h2>
             <p>
               Online inquiry and booking forms remain intentionally non-functional until the backend exists. For now, this section keeps the future flow visible without implying live submission.

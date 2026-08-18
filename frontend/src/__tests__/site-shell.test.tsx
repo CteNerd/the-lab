@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import Footer from '../components/Footer';
+import { sharedSiteCopy } from '../content/siteContent';
 import Header from '../components/Header';
 import Contact from '../pages/Contact';
 import Home from '../pages/Home';
@@ -26,7 +27,7 @@ describe('site shell', () => {
 
     expect(markup).toContain('href="/privacy"');
     expect(markup).toContain('href="/terms"');
-    expect(markup).toContain('Placeholder tagline pending Patrick review.');
+    expect(markup).toContain(sharedSiteCopy.footerTagline);
   });
 });
 

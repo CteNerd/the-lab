@@ -57,7 +57,7 @@ export default function Media() {
               <img
                 className={styles.image}
                 src="/video-poster-placeholder.svg"
-                alt="Video poster placeholder"
+                alt=""
                 loading="lazy"
                 width="640"
                 height="400"

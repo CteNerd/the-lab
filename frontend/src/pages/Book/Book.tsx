@@ -20,7 +20,7 @@ export default function Book() {
 
       <section className="section" aria-labelledby="booking-section-heading">
         <div className="container">
-          <div className={styles.notice} role="note" aria-labelledby="booking-section-heading">
+          <div className={styles.notice}>
             <h2 id="booking-section-heading">Online Booking Coming Soon</h2>
             <p>
               Final booking workflow, calendar rules, confirmations, and payment handling are intentionally deferred. Until then, this page points visitors to direct outreach.
