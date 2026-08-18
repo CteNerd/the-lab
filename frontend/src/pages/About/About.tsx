@@ -10,7 +10,7 @@ export default function About() {
             <p className="section-kicker">About The Lab</p>
             <h1 id="about-heading">About <span className="accent">The Lab</span></h1>
             <p className={`section-lead ${styles.subtitle}`}>
-              The page structure is ready for Patrick Robertson\'s bio, background, and philosophy without inventing claims before that content is approved.
+              The page structure is ready for Patrick Robertson’s bio, background, and philosophy without inventing claims before that content is approved.
             </p>
           </div>
           <span className="placeholder-badge">{placeholderLabel}</span>

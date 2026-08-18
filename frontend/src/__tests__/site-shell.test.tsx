@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
@@ -8,7 +9,7 @@ import Contact from '../pages/Contact';
 import Home from '../pages/Home';
 import SuccessStories from '../pages/SuccessStories';
 
-function renderWithRouter(node: React.ReactNode) {
+function renderWithRouter(node: ReactNode) {
   return renderToStaticMarkup(<MemoryRouter>{node}</MemoryRouter>);
 }
 
