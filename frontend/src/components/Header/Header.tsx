@@ -49,10 +49,7 @@ export default function Header() {
         return;
       }
 
-      if (
-        event.key !== 'Tab'
-        || !getFocusableElements().length
-      ) {
+      if (event.key !== 'Tab') {
         return;
       }
 
