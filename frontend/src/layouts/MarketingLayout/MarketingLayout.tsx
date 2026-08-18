@@ -77,10 +77,15 @@ export default function MarketingLayout() {
 
     document.title = meta.title;
 
-    const descriptionTag = document.querySelector('meta[name="description"]');
-    if (descriptionTag) {
-      descriptionTag.setAttribute('content', meta.description);
+    let descriptionTag = document.querySelector('meta[name="description"]');
+
+    if (!descriptionTag) {
+      descriptionTag = document.createElement('meta');
+      descriptionTag.setAttribute('name', 'description');
+      document.head.appendChild(descriptionTag);
     }
+
+    descriptionTag.setAttribute('content', meta.description);
   }, [pathname]);
 
   return (
