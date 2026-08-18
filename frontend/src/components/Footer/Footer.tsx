@@ -27,8 +27,7 @@ export default function Footer() {
             <span className={styles.logoSub}>Performance &amp; Strength</span>
           </Link>
           <p className={styles.tagline}>
-            {/* TODO: Confirm tagline with Patrick */}
-            Train harder. Perform better. Build your legacy.
+            [Tagline needed from Patrick]
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
@@ -12,19 +12,75 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const shouldRestoreFocusRef = useRef(false);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = (restoreFocus = false) => {
+    shouldRestoreFocusRef.current = restoreFocus;
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    if (!menuOpen) {
+      if (shouldRestoreFocusRef.current) {
+        menuToggleRef.current?.focus();
+        shouldRestoreFocusRef.current = false;
+      }
+
+      return;
+    }
+
+    const focusableElements = navRef.current?.querySelectorAll<HTMLElement>('a[href]');
+
+    const firstFocusable = focusableElements?.[0];
+    const lastFocusable = focusableElements?.[focusableElements.length - 1];
+
+    firstFocusable?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeMenu(true);
+        return;
+      }
+
+      if (
+        event.key !== 'Tab'
+        || !focusableElements?.length
+        || !firstFocusable
+        || !lastFocusable
+      ) {
+        return;
+      }
+
+      if (event.shiftKey && document.activeElement === firstFocusable) {
+        event.preventDefault();
+        lastFocusable.focus();
+      } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+        event.preventDefault();
+        firstFocusable.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [menuOpen]);
 
   return (
     <header className={styles.header} role="banner">
       <div className={`container ${styles.inner}`}>
-        <Link to="/" className={styles.logo} onClick={closeMenu} aria-label="The Lab — home">
+        <Link to="/" className={styles.logo} onClick={() => closeMenu()} aria-label="The Lab — home">
           <span className={styles.logoText}>THE LAB</span>
           <span className={styles.logoSub}>Performance &amp; Strength</span>
         </Link>
 
         <nav
           id="primary-nav"
+          ref={navRef}
           className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}
           aria-label="Primary navigation"
         >
@@ -36,14 +92,14 @@ export default function Header() {
                   className={({ isActive }) =>
                     [styles.navLink, isActive ? styles.navLinkActive : ''].join(' ')
                   }
-                  onClick={closeMenu}
+                  onClick={() => closeMenu()}
                 >
                   {label}
                 </NavLink>
               </li>
             ))}
             <li>
-              <Link to="/book" className={styles.ctaButton} onClick={closeMenu}>
+              <Link to="/book" className={styles.ctaButton} onClick={() => closeMenu()}>
                 Book Training
               </Link>
             </li>
@@ -51,11 +107,20 @@ export default function Header() {
         </nav>
 
         <button
+          ref={menuToggleRef}
+          type="button"
           className={styles.menuToggle}
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={menuOpen}
           aria-controls="primary-nav"
-          onClick={() => setMenuOpen((prev) => !prev)}
+          onClick={() => {
+            if (menuOpen) {
+              closeMenu(true);
+              return;
+            }
+
+            setMenuOpen(true);
+          }}
         >
           <span className={`${styles.bar} ${menuOpen ? styles.barOpen1 : ''}`} />
           <span className={`${styles.bar} ${menuOpen ? styles.barOpen2 : ''}`} />
@@ -66,11 +131,8 @@ export default function Header() {
       {menuOpen && (
         <div
           className={styles.overlay}
-          onClick={closeMenu}
-          role="button"
-          tabIndex={-1}
-          aria-label="Close navigation menu"
-          onKeyDown={(e) => e.key === 'Escape' && closeMenu()}
+          onClick={() => closeMenu(true)}
+          aria-hidden="true"
         />
       )}
     </header>
