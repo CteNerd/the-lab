@@ -1,0 +1,29 @@
+.page {}
+.hero { background-color: var(--lab-surface-alt); }
+.subtitle {
+  font-size: var(--lab-font-size-xl);
+  color: var(--lab-text-muted);
+  max-width: 700px;
+  margin-top: var(--lab-space-6);
+}
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--lab-space-8);
+  margin-bottom: var(--lab-space-12);
+}
+.infoItem h3 {
+  font-size: var(--lab-font-size-xs);
+  color: var(--lab-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--lab-space-2);
+}
+.formNote {
+  border: 1px solid var(--lab-border);
+  border-radius: var(--lab-radius-md);
+  padding: var(--lab-space-6);
+  background-color: var(--lab-surface);
+  color: var(--lab-text-muted);
+  font-size: var(--lab-font-size-sm);
+}
