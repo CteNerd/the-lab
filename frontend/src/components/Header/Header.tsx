@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
@@ -16,10 +16,10 @@ export default function Header() {
   const menuToggleRef = useRef<HTMLButtonElement>(null);
   const shouldRestoreFocusRef = useRef(false);
 
-  const closeMenu = (restoreFocus = false) => {
+  const closeMenu = useCallback((restoreFocus = false) => {
     shouldRestoreFocusRef.current = restoreFocus;
     setMenuOpen(false);
-  };
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) {
@@ -31,12 +31,14 @@ export default function Header() {
       return;
     }
 
-    const focusableElements = navRef.current?.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    const getFocusableElements = () => Array.from(
+      navRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      ) ?? [],
     );
 
-    const firstFocusable = focusableElements?.[0];
-    const lastFocusable = focusableElements?.[focusableElements.length - 1];
+    const focusableElements = getFocusableElements();
+    const firstFocusable = focusableElements[0];
 
     firstFocusable?.focus();
 
@@ -49,19 +51,29 @@ export default function Header() {
 
       if (
         event.key !== 'Tab'
-        || !focusableElements?.length
-        || !firstFocusable
-        || !lastFocusable
+        || !getFocusableElements().length
       ) {
         return;
       }
 
-      if (event.shiftKey && document.activeElement === firstFocusable) {
+      const updatedFocusableElements = getFocusableElements();
+      const updatedFirstFocusable = updatedFocusableElements[0];
+      const updatedLastFocusable = updatedFocusableElements[updatedFocusableElements.length - 1];
+
+      if (
+        !updatedFocusableElements.length
+        || !updatedFirstFocusable
+        || !updatedLastFocusable
+      ) {
+        return;
+      }
+
+      if (event.shiftKey && document.activeElement === updatedFirstFocusable) {
         event.preventDefault();
-        lastFocusable.focus();
-      } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+        updatedLastFocusable.focus();
+      } else if (!event.shiftKey && document.activeElement === updatedLastFocusable) {
         event.preventDefault();
-        firstFocusable.focus();
+        updatedFirstFocusable.focus();
       }
     };
 
@@ -70,7 +82,7 @@ export default function Header() {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [menuOpen]);
+  }, [closeMenu, menuOpen]);
 
   return (
     <header className={styles.header} role="banner">
