@@ -36,7 +36,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="about-image-heading">
+      <section className="section" aria-label="Coaching photo">
         <div className="container">
           <figure className={styles.supportFigure}>
             <img
@@ -47,7 +47,7 @@ export default function About() {
               width="800"
               height="1200"
             />
-            <figcaption id="about-image-heading" className={styles.supportCaption}>
+            <figcaption className={styles.supportCaption}>
               Coaching at The Lab Performance &amp; Strength.
             </figcaption>
           </figure>

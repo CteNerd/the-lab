@@ -119,7 +119,7 @@ export const mediaImageCards = [
     title: 'Football Position Training',
     caption: 'Athletes training for their specific position skills.',
     src: '/images/football-position-training.jpg',
-    alt: 'Athletes train not only for performance but for their specific skills.',
+    alt: 'Athletes training for their specific position skills',
   },
 ] as const;
 
