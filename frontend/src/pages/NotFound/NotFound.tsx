@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className={`section ${styles.page}`} aria-labelledby="notfound-heading">
       <div className={`container ${styles.inner}`}>
         <p className={styles.code} aria-hidden="true">404</p>
-        <h1 id="notfound-heading">Page <span className="accent">Not Found</span></h1>
+        <h1 id="notfound-heading" className={styles.heading}>Page <span className="accent">Not Found</span></h1>
         <p className={styles.message}>
           The page you're looking for doesn't exist or has moved.
         </p>

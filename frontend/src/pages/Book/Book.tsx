@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Book.module.css';
 
 export default function Book() {
@@ -21,7 +22,7 @@ export default function Book() {
               Our online booking system is currently being set up. To reserve your training session,
               please reach out directly by phone or email.
             </p>
-            <a href="/contact" className={styles.cta}>Contact Us</a>
+            <Link to="/contact" className={styles.cta}>Contact Us</Link>
           </div>
         </div>
       </section>
