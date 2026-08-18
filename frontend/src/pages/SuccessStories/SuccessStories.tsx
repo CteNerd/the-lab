@@ -58,7 +58,7 @@ export default function SuccessStories() {
           <figure className={styles.communityFigure}>
             <img
               src="/images/the-lab-athlete-group.jpg"
-              alt="Athletes learn to work and grow together, community."
+              alt="Athletes at The Lab learning to work and grow together as a community."
               className={styles.communityImage}
               loading="lazy"
               width="800"
