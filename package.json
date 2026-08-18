@@ -3,8 +3,8 @@
   "private": true,
   "description": "The Lab Performance & Strength — monorepo root",
   "scripts": {
-    "dev": "cd frontend && npm run dev",
-    "build": "cd frontend && npm run build",
-    "test": "cd frontend && npm test"
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": "npm --prefix frontend test --if-present"
   }
 }
