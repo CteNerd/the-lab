@@ -1,4 +1,5 @@
 import { contactDetails, mapLinks, placeholderLabel, socialLinks } from '../../content/siteContent';
+import { resolveAssetPath } from '../../utils/sitePaths';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -34,7 +35,7 @@ export default function Contact() {
         <div className="container">
           <figure className={styles.facilityFigure}>
             <img
-              src="/images/Patrick-Robertson-coaching.jpg"
+              src={resolveAssetPath('/images/Patrick-Robertson-coaching.jpg')}
               alt="Athletes working through a group football training drill on the field"
               className={styles.facilityImage}
               loading="lazy"

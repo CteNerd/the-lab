@@ -1,0 +1,98 @@
+name: GitHub Pages Preview
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+      - ".github/workflows/github-pages-preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build GitHub Pages Preview
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build -- --mode github-pages
+
+      - name: Add GitHub Pages SPA fallback
+        run: |
+          touch dist/.nojekyll
+          cat <<'EOF' > dist/404.html
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Redirecting…</title>
+              <script>
+                (() => {
+                  const basePath = '__BASE_PATH__';
+                  const { pathname, search, hash } = window.location;
+                  const relativePath = pathname.startsWith(basePath)
+                    ? pathname.slice(basePath.length)
+                    : pathname;
+                  const targetPath = relativePath || '/';
+                  const redirectUrl = `${basePath}/?p=${encodeURIComponent(targetPath)}${search ? `&q=${encodeURIComponent(search.slice(1))}` : ''}${hash ? `&h=${encodeURIComponent(hash.slice(1))}` : ''}`;
+
+                  window.location.replace(redirectUrl);
+                })();
+              </script>
+            </head>
+            <body></body>
+          </html>
+          EOF
+          sed -i 's|__BASE_PATH__|/the-lab|g' dist/404.html
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/dist
+
+  deploy:
+    name: Deploy GitHub Pages Preview
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

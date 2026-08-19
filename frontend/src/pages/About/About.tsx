@@ -1,4 +1,5 @@
 import { aboutSections, placeholderLabel, sharedSiteCopy } from '../../content/siteContent';
+import { resolveAssetPath } from '../../utils/sitePaths';
 import styles from './About.module.css';
 
 export default function About() {
@@ -40,7 +41,7 @@ export default function About() {
         <div className="container">
           <figure className={styles.supportFigure}>
             <img
-              src="/images/athlete-coaching-support.jpg"
+              src={resolveAssetPath('/images/athlete-coaching-support.jpg')}
               alt="Coach helping an athlete up during an outdoor training session"
               className={styles.supportImage}
               loading="lazy"

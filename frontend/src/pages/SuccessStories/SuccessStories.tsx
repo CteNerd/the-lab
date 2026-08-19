@@ -1,4 +1,5 @@
 import { placeholderLabel, successStoryCards } from '../../content/siteContent';
+import { resolveAssetPath } from '../../utils/sitePaths';
 import styles from './SuccessStories.module.css';
 
 export default function SuccessStories() {
@@ -57,7 +58,7 @@ export default function SuccessStories() {
         <div className="container">
           <figure className={styles.communityFigure}>
             <img
-              src="/images/the-lab-athlete-group.jpg"
+              src={resolveAssetPath('/images/the-lab-athlete-group.jpg')}
               alt="Athletes at The Lab learning to work and grow together as a community."
               className={styles.communityImage}
               loading="lazy"

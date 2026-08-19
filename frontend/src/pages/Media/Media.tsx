@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { mediaImageCards, mediaVideoGuidelines } from '../../content/siteContent';
+import { resolveAssetPath } from '../../utils/sitePaths';
 import styles from './Media.module.css';
 
 export default function Media() {
@@ -55,7 +56,7 @@ export default function Media() {
             <div className={`surface-panel ${styles.posterCard}`}>
               <img
                 className={styles.image}
-                src="/images/football-training-action.jpg"
+                src={resolveAssetPath('/images/football-training-action.jpg')}
                 alt="Athletes preparing for a football training drill inside an indoor facility"
                 loading="lazy"
                 width="640"

@@ -86,8 +86,11 @@ Potential services include:
 
 The project maintains:
 
+- `GitHub Pages preview` — https://ctenerd.github.io/the-lab/ (temporary review environment)
 - `staging`
 - `production`
+
+The GitHub Pages URL is only for temporary review of the static frontend before AWS staging and production are established.
 
 Target release flow:
 

@@ -1,3 +1,5 @@
+import { resolveAssetPath } from '../utils/sitePaths';
+
 export const placeholderLabel = 'Placeholder content pending Patrick review.';
 
 export const sharedSiteCopy = {
@@ -106,19 +108,19 @@ export const mediaImageCards = [
   {
     title: 'Athlete Group Training',
     caption: 'Athletes training together at The Lab Performance & Strength.',
-    src: '/images/the-lab-athlete-group.jpg',
+    src: resolveAssetPath('/images/the-lab-athlete-group.jpg'),
     alt: 'Athlete performing a speed and change of direction drill during an indoor training session',
   },
   {
     title: 'Speed & Agility Training',
     caption: 'One-on-one coaching during an outdoor football training session.',
-    src: '/images/speed-agility-training.jpg',
+    src: resolveAssetPath('/images/speed-agility-training.jpg'),
     alt: 'Coach working one on one with an athlete during an outdoor football training session',
   },
   {
     title: 'Football Position Training',
     caption: 'Athletes training for their specific position skills.',
-    src: '/images/football-position-training.jpg',
+    src: resolveAssetPath('/images/football-position-training.jpg'),
     alt: 'Athletes train not only for performance but for their specific skills.',
   },
 ] as const;

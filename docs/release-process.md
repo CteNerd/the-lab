@@ -12,8 +12,11 @@ feature branch → pull request → validation → main → staging → manual a
 
 | Environment | URL                              | Deployment Trigger      | Approval     |
 |-------------|----------------------------------|-------------------------|--------------|
+| GitHub Pages preview | https://ctenerd.github.io/the-lab/ | Merge to `main` or manual rerun | Automatic |
 | staging     | TBD (set after AWS bootstrap)    | Merge to `main`         | Automatic    |
 | production  | TBD (set after AWS bootstrap)    | Manual promotion        | Required reviewer |
+
+> The GitHub Pages preview is a temporary review environment for the static frontend. It does not replace the planned AWS staging or production deployments.
 
 ## Pull Request Validation
 
@@ -37,6 +40,31 @@ Steps:
 2. Authenticate to AWS via GitHub OIDC (staging role).
 3. Sync `frontend/dist/` to staging S3 bucket.
 4. Invalidate staging CloudFront distribution.
+
+## GitHub Pages Preview Deployment
+
+Triggered automatically on merge to `main` and can also be rerun from **GitHub → Actions → GitHub Pages Preview → Run workflow**.
+
+Steps:
+
+1. Build the frontend with the GitHub Pages-specific Vite base path.
+2. Run the existing frontend tests.
+3. Upload `frontend/dist/` with the official GitHub Pages artifact action.
+4. Deploy with the official GitHub Pages deployment action to the `github-pages` environment.
+
+### Route Refresh Behavior
+
+GitHub Pages does not natively support SPA history fallback for nested routes. The preview workflow therefore publishes a lightweight `404.html` redirect that sends unmatched requests back to `index.html`, which restores the original client-side route before React mounts.
+
+This fallback is only for the temporary GitHub Pages review environment. The AWS staging and production architecture remains unchanged.
+
+### Disable / Remove the Preview Later
+
+Once AWS staging is live, remove or disable the temporary preview by:
+
+1. Disabling the `GitHub Pages Preview` workflow or deleting `.github/workflows/github-pages-preview.yml`.
+2. Switching off GitHub Pages in **GitHub → Settings → Pages** if it is no longer needed.
+3. Removing the temporary preview URL from documentation.
 
 ## Production Deployment
 
