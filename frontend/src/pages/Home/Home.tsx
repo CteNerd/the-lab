@@ -7,6 +7,7 @@ import {
   sharedSiteCopy,
   successStoryCards,
 } from '../../content/siteContent';
+import { resolveAssetPath } from '../../utils/sitePaths';
 import styles from './Home.module.css';
 
 export default function Home() {
@@ -134,7 +135,7 @@ export default function Home() {
             </div>
             <div className={styles.profileImageWrap}>
               <img
-                src="/images/Patrick-Robertson.jpg"
+                src={resolveAssetPath('/images/Patrick-Robertson.jpg')}
                 alt="Patrick Robertson standing on a football field during a training session"
                 className={styles.profileImage}
                 loading="lazy"
