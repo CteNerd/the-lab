@@ -16,6 +16,10 @@ describe('GitHub Pages preview configuration', () => {
     expect(resolveAssetPath('/images/Patrick-Robertson.jpg', '/the-lab/')).toBe('/the-lab/images/Patrick-Robertson.jpg');
   });
 
+  it('normalizes asset base URLs without a trailing slash', () => {
+    expect(resolveAssetPath('/images/Patrick-Robertson.jpg', '/the-lab')).toBe('/the-lab/images/Patrick-Robertson.jpg');
+  });
+
   it.each([
     '/',
     '/about',

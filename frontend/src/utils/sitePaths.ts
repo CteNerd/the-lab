@@ -7,5 +7,7 @@ export function getRouterBasename(baseUrl: string) {
 }
 
 export function resolveAssetPath(path: string, baseUrl = import.meta.env.BASE_URL) {
-  return `${baseUrl}${path.replace(/^\//, '')}`;
+  const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
+  return `${normalizedBaseUrl}${path.replace(/^\//, '')}`;
 }
