@@ -132,13 +132,15 @@ export default function Home() {
                 [Patrick introduction placeholder — final bio, background, and positioning statement pending Patrick review.]
               </p>
             </div>
-            <div className="surface-panel">
-              <h3>What this section will hold</h3>
-              <ul className="inline-list" role="list">
-                <li>Bio and background summary.</li>
-                <li>Coaching philosophy snapshot.</li>
-                <li>Link into the full About page.</li>
-              </ul>
+            <div className={styles.profileImageWrap}>
+              <img
+                src="/images/Patrick-Robertson.jpg"
+                alt="Patrick Robertson standing on a football field during a training session"
+                className={styles.profileImage}
+                loading="lazy"
+                width="560"
+                height="840"
+              />
             </div>
           </div>
         </div>

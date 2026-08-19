@@ -82,6 +82,19 @@
   align-items: start;
 }
 
+.profileImageWrap {
+  border-radius: var(--lab-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--lab-border);
+}
+
+.profileImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 .finalCta {
   display: grid;
   gap: var(--lab-space-6);

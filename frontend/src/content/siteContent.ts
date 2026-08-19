@@ -104,16 +104,22 @@ export const successStoryCards = [
 
 export const mediaImageCards = [
   {
-    title: 'Training Photo Placeholder',
-    caption: 'Optimized image slot for future training photography, pending approved assets from Patrick.',
+    title: 'Athlete Group Training',
+    caption: 'Athletes training together at The Lab Performance & Strength.',
+    src: '/images/the-lab-athlete-group.jpg',
+    alt: 'Athlete performing a speed and change of direction drill during an indoor training session',
   },
   {
-    title: 'Coaching Floor Placeholder',
-    caption: 'Optimized image slot for facility or coaching-floor imagery, pending approved assets from Patrick.',
+    title: 'Speed & Agility Training',
+    caption: 'One-on-one coaching during an outdoor football training session.',
+    src: '/images/speed-agility-training.jpg',
+    alt: 'Coach working one on one with an athlete during an outdoor football training session',
   },
   {
-    title: 'Athlete Session Placeholder',
-    caption: 'Optimized image slot for athlete action shots, pending approved assets and publishing permission.',
+    title: 'Football Position Training',
+    caption: 'Athletes training for their specific position skills.',
+    src: '/images/football-position-training.jpg',
+    alt: 'Athletes train not only for performance but for their specific skills.',
   },
 ] as const;
 

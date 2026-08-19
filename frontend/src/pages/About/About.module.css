@@ -13,3 +13,24 @@
   gap: var(--lab-space-6);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
+
+.supportFigure {
+  margin: 0;
+  max-width: 760px;
+}
+
+.supportImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--lab-radius-md);
+  border: 1px solid var(--lab-border);
+  object-fit: cover;
+  max-height: 560px;
+}
+
+.supportCaption {
+  margin-top: var(--lab-space-3);
+  font-size: var(--lab-font-size-sm);
+  color: var(--lab-text-muted);
+}
